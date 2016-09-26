@@ -1,0 +1,36 @@
+<%= form_for @user do |f| %>
+  <div class="form-group">
+    <%= f.label :firstname %><br>
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="form-group">
+    <%= f.label :lastname %><br>
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="form-group">
+    <%= f.label :date_of_birth %><br>
+    <%= f.date_field :date_of_birth %><br>
+  </div>
+  <div class="form-group">
+    <%= f.label :gender %><br />
+    <%= f.label :gender, "Male", value: "male"  %>
+    <%= f.radio_button :gender, 'male' %>
+    <%= f.label :gender, "Female", value: "female" %>
+    <%= f.radio_button :gender, 'female' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit @user.new_record? ? "Create account" : "Update account" %>
+  </div>
+<% end %>

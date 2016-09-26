@@ -1,0 +1,13 @@
+<%= form_for :session, url: login_path do |f| %>
+  <div class="form-group">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, placeholder: "Enter email" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div class="form-group">
+    <%= f.submit 'Sign in', data: {disable_with: "Signing in to your account..."} %>
+  </div>
+<% end %>
