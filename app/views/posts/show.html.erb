@@ -1,0 +1,11 @@
+<h1><%= @post.title %></h1>
+<p><%= @post.content %></p>
+<div class="tags">
+  <h4>Tags: </h4>
+  <% @post.tags.each do |tag| %>
+    <%= tag.name %><br>
+  <% end %>
+</div>
+
+<%= link_to "All posts", posts_path %> |
+<%= link_to "Home", root_path %>

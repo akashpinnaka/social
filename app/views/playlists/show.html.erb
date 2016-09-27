@@ -1,0 +1,7 @@
+<h1><%= @playlist.name %></h1>
+<p><%= @playlist.description %></p>
+<%= link_to "View Playlists", playlists_path %> 
+<% if @playlist.user = current_user %>
+| <%= link_to "Edit", edit_playlist_path(@playlist) %> |
+  <%= link_to "Delete", playlist_path(@playlist), method: :delete, data: {confirm: "Are you sure?"} %>
+<% end %>
