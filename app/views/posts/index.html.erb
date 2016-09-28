@@ -1,7 +1,7 @@
 <h1 align="center">Listing all posts</h1>
 <% @posts.each do |post| %>
   <div class="post">
-    <h2><%= link_to post.title, post_path(post) %></h2>
+    <h3><%= link_to post.title, post_path(post) %></h3>
     <p><%= post.content %></p>
     <strong>TAGS: &nbsp; &nbsp;</strong>
     <% post.tags.each do |tag| %>
