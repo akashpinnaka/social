@@ -3,6 +3,8 @@ class User < ApplicationRecord
   has_many :tags, through: :posts
   has_many :playlists
   has_many :videos, through: :playlists
+  has_many :friendships
+  has_many :friends, through: :friendships
 
   validates :firstname, presence: true
   validates :email, presence: true, uniqueness: true

@@ -1,6 +1,9 @@
 <% if logged_in? %>
   <h1>welcome, <%= current_user.firstname + " " + current_user.lastname %></h1>
   <%= link_to "Logout", logout_path, method: :delete %>
+  | <%= link_to "Friends", friends_user_path(current_user) %>
+  | <%= link_to "Friend Requests", friend_requests_user_path(current_user) %>
+  | <%= link_to "Pending requests", pending_requests_user_path(current_user) %>
 <% else %>
   <%= link_to "Login", login_path %>
 <% end %>
@@ -8,4 +11,3 @@
 | <%= link_to "All posts", posts_path %>
 | <%= link_to "All playlists", playlists_path %>
 | <%= link_to "All videos", videos_path %>
-| <%= link_to "Friends", "#" %>

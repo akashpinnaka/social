@@ -1,0 +1,5 @@
+<% @friends.each do |friend| %>
+  <h3><%= friend.email %></h3>
+  <% @friendship_id = Friendship.where(user_id: current_user.id).where(friend_id: friend).first.id %>
+  <p><%= link_to "Remove friend", friendship_path(@friendship_id), method: :delete %></p>
+<% end %>

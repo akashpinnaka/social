@@ -39,6 +39,20 @@ class UsersController < ApplicationController
     redirect_to root_path, notice: "Account was successfully deleted"
   end
 
+  def friends
+    @friends = current_user.friends
+  end
+
+  def friend_requests
+    @friendships_as_friend = Friendship.all.where(friend_id: current_user.id, approved: false)
+  end
+
+  def pending_requests
+    @pending = Friendship.all.where(user_id: current_user.id, approved: false)
+  end
+
+  private
+
   def set_user
     @user = User.find(params[:id])
   end

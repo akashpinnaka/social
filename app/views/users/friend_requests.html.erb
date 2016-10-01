@@ -1,0 +1,4 @@
+<% @friendships_as_friend.each do |friendship| %>
+  <h4><%= friendship.user.firstname + friendship.user.lastname %></h4>
+  <%= link_to "Accept", accept_path(user_id: friendship.user.id) %>
+<% end %>

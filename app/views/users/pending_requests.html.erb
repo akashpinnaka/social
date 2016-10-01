@@ -1,0 +1,5 @@
+<% @pending.each do |requested_user_friendship| %>
+  <div class="requested-user">
+    <%= requested_user_friendship.friend.firstname + requested_user_friendship.friend.lastname %>
+  </div>
+<% end %>
